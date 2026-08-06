@@ -1,0 +1,7 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/Pages/*"
+  to = "/pages/:splat"
+  status = 301
