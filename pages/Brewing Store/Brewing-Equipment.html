@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewing Equipments Store</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Background image placeholder */
+            background: linear-gradient(rgba(50, 48, 46, 0.85), rgba(50, 48, 46, 0.85)), url('brewing-tools-images/background image.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: #f9d6d5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        /* Responsive adjustment for smaller screens so it doesn't break */
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+        }
+
+        .product-card {
+            border: 1px solid #eaeaea;
+            border-radius: 6px;
+            padding: 20px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Standardized 4:3 image wrapper enforcing exact 400x300 proportion display */
+        .product-image-wrapper {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-card h3 {
+            margin-top: 0;
+            color: #2c221e;
+        }
+
+        /* Floating Facebook Messenger Link Button */
+        .messenger-bubble {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #0084ff;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            box-shadow: 0px 4px 12px rgba(0, 132, 255, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .messenger-bubble:hover {
+            background-color: #006dd6;
+            transform: scale(1.05);
+        }
+
+        /* Color swatches styling */
+        .color-swatches-container {
+            margin-top: 10px;
+        }
+
+        .color-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .color-swatches {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .swatch {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            display: inline-block;
+            cursor: pointer;
+            box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Toyo Specialty Store</h1>
+        <span class="tagline">Professional brewing equipment for the ultimate home setup</span>
+    </header>
+
+    <div class="container">
+        <h2>Our Professional Brewing Equipment</h2>
+        <p>Explore our current selection of high-quality brewing gear and tools. Want to place an order or ask about specs?</p>
+        <p>Click the chat button at the bottom right to message us directly!</p>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="brewing-tools-images/Origami-dripperS.JPG" alt="Origami Driper S" class="product-image">
+                </div>
+                <h3>Origami Driper S</h3>
+                <p>The 20 ribs (grooves) create a space between the dripper and the paper, allowing hot water to escape smoothly and expressing a variety of brewing styles.</p>
+                
+                <div class="color-swatches-container">
+                    <span class="color-label">Colors available:</span>
+                    <div class="color-swatches">
+                        <span class="swatch" style="background-color: #ffffff;" title="White"></span>
+                        <span class="swatch" style="background-color: #d9534f;" title="Red"></span>
+                        <span class="swatch" style="background-color: #f0ad4e;" title="Orange"></span>
+                        <span class="swatch" style="background-color: #f7e100;" title="Yellow"></span>
+                        <span class="swatch" style="background-color: #40e0d0;" title="Turquoise"></span>
+                        <span class="swatch" style="background-color: #e3dac9;" title="Matte Beige"></span>
+                        <span class="swatch" style="background-color: #8c8c8c;" title="Matte Gray"></span>
+                        <span class="swatch" style="background-color: #f4c2c2;" title="Matte Pink"></span>
+                        <span class="swatch" style="background-color: #556b2f;" title="Matte Green"></span>
+                        <span class="swatch" style="background-color: #4682b4;" title="Matte Blue"></span>
+                        <span class="swatch" style="background-color: #1b263b;" title="Matte Navy"></span>
+                        <span class="swatch" style="background-color: #212121;" title="Matte Black"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="brewing-tools-images/dripper holder[holder].JPG" alt="Dripper Holder" class="product-image">
+                </div>
+                <h3>Dripper Holder [Wooden]</h3>
+                <p>Stable and stylish wooden base designed to securely fit cone and wave drippers.</p>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="brewing-tools-images/origami filter[cone].JPG" alt="Origami Cone Filter" class="product-image">
+                </div>
+                <h3>Manual Espresso Maker</h3>
+                <p>Lever-operated portable espresso machine for rich crema anywhere you go.</p>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="brewing-tools-images/dipper-M.JPG" alt="Dipper M" class="product-image">
+                </div>
+                <h3>Dipper M</h3>
+                <p>The ORIGAMI dripper M features bright colors and vertical grooves that resemble folded paper. Its 20 ribs create space between the dripper and filter for smooth water flow and diverse brewing styles.</p>
+                
+                <div class="color-swatches-container">
+                    <span class="color-label">Colors available:</span>
+                    <div class="color-swatches">
+                        <span class="swatch" style="background-color: #ffffff;" title="White"></span>
+                        <span class="swatch" style="background-color: #d9534f;" title="Red"></span>
+                        <span class="swatch" style="background-color: #f0ad4e;" title="Orange"></span>
+                        <span class="swatch" style="background-color: #f7e100;" title="Yellow"></span>
+                        <span class="swatch" style="background-color: #40e0d0;" title="Turquoise"></span>
+                        <span class="swatch" style="background-color: #e3dac9;" title="Matte Beige"></span>
+                        <span class="swatch" style="background-color: #8c8c8c;" title="Matte Gray"></span>
+                        <span class="swatch" style="background-color: #f4c2c2;" title="Matte Pink"></span>
+                        <span class="swatch" style="background-color: #556b2f;" title="Matte Green"></span>
+                        <span class="swatch" style="background-color: #4682b4;" title="Matte Blue"></span>
+                        <span class="swatch" style="background-color: #1b263b;" title="Matte Navy"></span>
+                        <span class="swatch" style="background-color: #212121;" title="Matte Black"></span>
+                    </div>
+                </div>
+            
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="brewing-tools-images/Dripper holder [Grain White x Black].JPG" alt="V60 Pour Over Dripper" class="product-image">
+                </div>
+                <h3>Dripper Holder [Grain White x Black]</h3>
+                <p>Resin dripper holder with wood grain and black blown design. The holes are designed to fit the 20 grooves on the dripper, keeping the dripper horizontal for more stable brewing.</p>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="brewing-tools-images/Paper Filter [Cone+Wave set].JPG" alt="Classic French Press" class="product-image">
+                </div>
+                <h3>Paper Filter [Cone+Wave set]</h3>
+                <p>Heat-resistant borosilicate glass body with a stainless steel fine mesh filter.</p>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="brewing-tools-images/Glass Coffee Server with HARIO.JPG" alt="Stovetop Moka Pot" class="product-image">
+                </div>
+                <h3>Glass Coffee Server with HARIO</h3>
+                <p>The set includes a wave filter and a conical filter. The ORIGAMI Dripper allows the use of two types of filters in one dripper, and the flavor of coffee can be changed just by changing the paper filter, even with the same coffee beans.</p>
+            </div>
+
+           
+        </div> </div> <a href="https://m.me/61574739190985" target="_blank" onclick="openMessenger(event)" class="messenger-bubble">
+        💬 Order via Messenger
+    </a>
+
+    <script>
+        function openMessenger(event) {
+            event.preventDefault();
+            var width = 450;
+            var height = 600;
+            var left = (window.innerWidth / 2) - (width / 2);
+            var top = (window.innerHeight / 2) - (height / 2);
+            
+            window.open("https://m.me/61574739190985", "MessengerChat", "width=" + width + ",height=" + height + ",top=" + top + ",left=" + left + ",toolbar=no,location=no,status=no,menubar=no,scrollbars=yes");
+        }
+    </script>
+
+</body>
+</html>
