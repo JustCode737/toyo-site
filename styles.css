@@ -299,7 +299,26 @@ section.reveal.is-visible {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
+
 }
+
+/* Disabled Product Cards under Maintenance */
+.product-card.maintenance {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.product-card.maintenance img {
+    pointer-events: none;
+}
+
+.product-card .badge {
+    display: block;
+    font-size: 0.8rem;
+    color: #ff4d4d;
+    font-weight: 600;
+    margin-top: 5px;
+}S
 
 .product-card {
     background: white;
