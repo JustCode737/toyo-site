@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Store - Toyo Specialty Coffee</title>
+    <link rel="icon" href="/images/icon_image.jpg" type="image/jpg">
+    
+    <style>
+        /* Store Selector Styles */
+        .store-selector-body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .selector-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .selector-container h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .selector-container p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .store-options {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .store-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            width: 220px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .store-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .store-card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .store-card p {
+            font-size: 0.9rem;
+            color: #777;
+            margin: 0;
+        }
+
+        .shopee-card {
+            border-top: 4px solid #ee4d2d; /* Shopee's signature orange color */
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #ee4d2d;
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body class="store-selector-body">
+
+    <div class="selector-container">
+        <h1>Welcome to Toyo Specialty Coffee</h1>
+        <p>Please select your preferred store location:</p>
+
+        <div class="store-options">
+            <a href="/pages/Brewing Store/Brewing-Equipment.html" class="store-card">
+                <h2>International Store</h2>
+                <p>Browse global products and direct shipping.</p>
+            </a>
+
+            <a href="https://shopee.ph/toyocafeph?originalCategoryId=11034549#product_list" target="_blank" rel="noopener noreferrer" class="store-card shopee-card">
+                <h2>Domestic Store</h2>
+                <p>Shop locally via our Shopee storefront.</p>
+                <span class="badge">Shopee</span>
+            </a>
+        </div>
+    </div>
+
+    </body>
+</html>
