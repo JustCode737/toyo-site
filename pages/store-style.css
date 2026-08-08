@@ -4,7 +4,7 @@
             margin: 0;
             padding: 0;
             /* Background image placeholder */
-            background: linear-gradient(rgba(50, 48, 46, 0.85), rgba(50, 48, 46, 0.85)), url('brewing-tools-images/background image.png') no-repeat center center fixed;
+            background: linear-gradient(rgba(50, 48, 46, 0.85), rgba(50, 48, 46, 0.85)), url('/images/hero-bg2.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #333;
         }
