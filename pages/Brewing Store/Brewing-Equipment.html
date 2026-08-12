@@ -100,22 +100,124 @@
             background-color: #f0f0f0;
             transform: scale(1.1);
         }
+
+        /* Header / Navigation Bar Centered Styling */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px 30px;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-titles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Floating Chat Widget Styles */
+        .floating-chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+
+        .floating-main-btn {
+            background-color: #212121;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+
+        .floating-main-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .floating-options {
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            position: absolute;
+            bottom: 55px;
+            right: 0;
+            background: white;
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            min-width: 180px;
+        }
+
+        .floating-options.active {
+            display: flex;
+        }
+
+        .floating-options a {
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-align: center;
+            transition: opacity 0.2s;
+        }
+
+        .floating-options a:hover {
+            opacity: 0.9;
+        }
+
+        .fl-whatsapp { background-color: #25d366; }
+        .fl-messenger { background-color: #0084ff; }
+        .fl-viber { background-color: #7360f2; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-logo-wrapper">
-            <img src="brewing-tools-images/cat-logo.png" alt="Toyo Specialty Store Logo" class="header-logo">
+        <div class="header-left">
+            <div class="header-logo-wrapper">
+                <img src="brewing-tools-images/cat-logo.png" alt="Toyo Specialty Store Logo" class="header-logo">
+            </div>
+            <div class="header-titles">
+                <h1>Toyo Specialty Store</h1>
+                <span class="tagline">Origami products for the ultimate home setup</span>
+            </div>
         </div>
-        <h1>Toyo Specialty Store</h1>
-        <span class="tagline">Professional brewing equipment for the ultimate home setup</span>
     </header>
 
     <div class="container">
-        <h2>Our Professional Brewing Equipment</h2>
-        <p>Explore our current selection of high-quality brewing gear and tools. Want to place an order or ask about specs?</p>
-        <p>Click the chat button at the bottom right to message us directly!</p>
+        <h2>Our Professional Brewing Products</h2>
+        <p>Explore our current selection of high-quality brewing gear and tools from Origami. Want to place an order or ask about specs?</p>
+        <p>Click the <strong>Quick Order</strong> button at the bottom right of your screen to chat and shop with us via WhatsApp, Messenger, or Viber!</p>
 
         <div class="products-grid">
             <div class="product-card" data-product="origami-s">
@@ -128,7 +230,6 @@
                 <div class="color-swatches-container">
                     <span class="color-label">Colors available:</span>
                     <div class="color-swatches">
-                        <!-- Note: Replace the image paths below with your actual color variant filenames when available -->
                         <span class="swatch active" style="background-color: #ffffff;" title="White" onclick="changeColor('origami-s-img', 'brewing-tools-images/dipper-s-colors/dipper-s-white.JPG', this)"></span>
                         <span class="swatch" style="background-color: #d9534f;" title="Red" onclick="changeColor('origami-s-img', 'brewing-tools-images/dipper-s-colors/dipper-s-red.JPG', this)"></span>
                         <span class="swatch" style="background-color: #f0ad4e;" title="Orange" onclick="changeColor('origami-s-img', 'brewing-tools-images/dipper-s-colors/dipper-s-orange.JPG', this)"></span>
@@ -141,7 +242,6 @@
                         <span class="swatch" style="background-color: #4682b4;" title="Matte Blue" onclick="changeColor('origami-s-img', 'brewing-tools-images/dipper-s-colors/dipper-s-blue.JPG', this)"></span>
                         <span class="swatch" style="background-color: #1b263b;" title="Matte Navy" onclick="changeColor('origami-s-img', 'brewing-tools-images/dipper-s-colors/dipper-s-navy.JPG', this)"></span>
                         <span class="swatch" style="background-color: #212121;" title="Matte Black" onclick="changeColor('origami-s-img', 'brewing-tools-images/dipper-s-colors/dipper-s-black.JPG', this)"></span>
-
                     </div>
                 </div>
             </div>
@@ -164,7 +264,7 @@
 
             <div class="product-card" data-product="dipper-m">
                 <div class="product-image-wrapper">
-                    <img src="brewing-tools-images/dipper-m-colors/dipper-m-white.JPG" alt="Dipper M" class="product-image fade-image" id="dipper-m-img" onclick="openModal(this)">
+                    <img src="brewing-tools-images/dipper-M-colors/dipper-m-white.JPG" alt="Dipper M" class="product-image fade-image" id="dipper-m-img" onclick="openModal(this)">
                 </div>
                 <h3>Dipper M</h3>
                 <p>The ORIGAMI dripper M features bright colors and vertical grooves that resemble folded paper. Its 20 ribs create space between the dripper and filter for smooth water flow and diverse brewing styles.</p>
@@ -172,7 +272,6 @@
                 <div class="color-swatches-container">
                     <span class="color-label">Colors available:</span>
                     <div class="color-swatches">
-                        <!-- Note: Replace the image paths below with your actual color variant filenames when available -->
                         <span class="swatch active" style="background-color: #ffffff;" title="White" onclick="changeColor('dipper-m-img', 'brewing-tools-images/dipper-m-colors/dipper-m-white.JPG', this)"></span>
                         <span class="swatch" style="background-color: #d9534f;" title="Red" onclick="changeColor('dipper-m-img', 'brewing-tools-images/dipper-m-colors/dipper-m-red.JPG', this)"></span>
                         <span class="swatch" style="background-color: #f0ad4e;" title="Orange" onclick="changeColor('dipper-m-img', 'brewing-tools-images/dipper-m-colors/dipper-m-orange.JPG', this)"></span>
@@ -224,9 +323,17 @@
         </div>
     </div>
 
-    <a href="https://m.me/61574739190985" target="_blank" onclick="openMessenger(event)" class="messenger-bubble">
-        💬 Order via Messenger
-    </a>
+    <!-- Floating Chat Widget (Bottom-Right) -->
+    <div class="floating-chat-container">
+        <div class="floating-options" id="floatingOptions">
+            <a href="https://wa.me/639627708694" target="_blank" class="fl-whatsapp">WhatsApp</a>
+            <a href="https://m.me/61574739190985" target="_blank" onclick="openMessenger(event)" class="fl-messenger">Facebook Messenger</a>
+            <a href="viber://chat?number=%2B639627708694" target="_blank" class="fl-viber" id="viberLink">Viber</a>
+        </div>
+        <button class="floating-main-btn" onclick="toggleFloatingChat()">
+            💬 Quick Order
+        </button>
+    </div>
 
     <script>
         function openMessenger(event) {
@@ -239,24 +346,23 @@
             window.open("https://m.me/61574739190985", "MessengerChat", "width=" + width + ",height=" + height + ",top=" + top + ",left=" + left + ",toolbar=no,location=no,status=no,menubar=no,scrollbars=yes");
         }
 
+        function toggleFloatingChat() {
+            var options = document.getElementById('floatingOptions');
+            options.classList.toggle('active');
+        }
+
         function changeColor(imgId, newImageSrc, swatchElement) {
             var imgElement = document.getElementById(imgId);
             
-            // Prevent reloading the same image
             if (imgElement.src.includes(newImageSrc)) return;
 
-            // Trigger the fade-out/scale-down animation
             imgElement.classList.add('changing');
 
             setTimeout(function() {
-                // Change the source to the new color variant
                 imgElement.src = newImageSrc;
-                
-                // Bring back the image with fade-in
                 imgElement.classList.remove('changing');
-            }, 300); // Matches the CSS transition duration (0.3s)
+            }, 300);
 
-            // Handle active state styling for swatches
             var parentSwatches = swatchElement.closest('.color-swatches').querySelectorAll('.swatch');
             parentSwatches.forEach(function(s) {
                 s.classList.remove('active');
@@ -272,11 +378,23 @@
         }
 
         function closeModal(event) {
-            // Close if clicking the background overlay, the close button, or anything inside modal-close
             if (event.target.id === 'imageModal' || event.target.classList.contains('modal-close')) {
                 document.getElementById('imageModal').style.display = 'none';
             }
         }
+
+        // Check if the user is on a mobile device
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // If NOT on a mobile device (i.e. desktop), hide the Viber option
+        window.addEventListener('DOMContentLoaded', function() {
+            var viberElement = document.getElementById('viberLink');
+            if (viberElement && !isMobileDevice()) {
+                viberElement.style.display = 'none';
+            }
+        });
     </script>
 
 </body>
