@@ -1,14 +1,17 @@
-/* Reset and Base Styles */
+/* --- EDITORIAL & BOUTIQUE DESIGN THEME --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: #000000;
+body.editorial-theme {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.7;
+    background-color: #121110;
+    color: #f4f1ea;
     overflow-x: hidden;
 }
 
@@ -17,66 +20,125 @@ html {
 }
 
 section {
-    scroll-margin-top: 80px;
-}
-
-section.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-section.reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+    scroll-margin-top: 70px;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
-/* Navigation */
+.sub-heading {
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #e09375;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+
+
+
+/* --- LOADING SCREEN ANIMATION --- */
+#site-loader {
+    position: fixed;
+    inset: 0;
+    background-color: #000000; /* Pure black to match the logo background */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#site-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+.spinning-loader-logo {
+    width: 220px;
+    height: auto;
+    animation: logoSpinPulse 6s cubic-bezier(0.4, 0, 0.2, 1) infinite; /* Slowed down to 6 seconds */
+}
+
+@keyframes logoSpinPulse {
+    0% {
+        transform: rotate(0deg) scale(0.95);
+        opacity: 0.8;
+    }
+    50% {
+        transform: rotate(720deg) scale(1.05); /* Two smooth rotations halfway */
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(1440deg) scale(0.95); /* Four full rotations total over 6 seconds */
+        opacity: 0.8;
+    }
+}
+
+
+
+
+
+
+
+
+/* --- SOLID PUMPKIN NAVIGATION BAR --- */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(212, 84, 59, 0.95);
-    backdrop-filter: blur(10px);
     z-index: 1000;
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    background-color: #D96B27; /* Solid Pumpkin Color */
+    border-bottom: 2px solid #b85418;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .nav-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand-tag {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #ffffff;
 }
 
 .nav-links {
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #ffffff;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #ffe4d6;
+    color: #121110; 
 }
 
-/* Hero Section */
+/* --- CINEMATIC HERO --- */
 .hero {
     position: relative;
     height: 100vh;
@@ -89,18 +151,20 @@ section.reveal.is-visible {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1.5s ease-in-out, transform 8s ease;
+    transform: scale(1);
     z-index: 0;
 }
 
 .hero-slide.active {
-    opacity: 1;
+    opacity: 0.55; 
+    transform: scale(1.06);
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: radial-gradient(circle, rgba(18,17,16,0.2) 0%, rgba(18,17,16,0.9) 100%);
     z-index: 1;
 }
 
@@ -113,469 +177,406 @@ section.reveal.is-visible {
     align-items: center;
     height: 100%;
     text-align: center;
+    padding: 0 20px;
 }
 
-
-
+.hero-badge-capsule {
+    background: rgba(224, 147, 117, 0.2);
+    border: 1px solid rgba(224, 147, 117, 0.5);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e09375;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
 
 .hero-logo {
-    width: 400px;
+    width: 450px;
     max-width: 90%;
     height: auto;
-    margin: 0 auto 20px auto; /* top right bottom left */
-    display: block;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.6));
 }
 
-.cta-button {       /*THIS IS THE SEE OUR MENU BUTTON */
+.cta-button {
     display: inline-block;
-    padding: 15px 60px;
-    background-color: #d4543b;
-    color: white;
+    padding: 16px 44px;
+    background-color: #f4f1ea;
+    color: #121110;
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cta-button:hover {
-    background-color: #b8442f;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 84, 59, 0.4);
+    background-color: #e09375;
+    color: #fff;
+    transform: translateY(-4px);
 }
 
-/* Opening Hours Section */
-.opening-hours {
-    padding: 100px 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/latte-art.png') center/cover no-repeat;
-    /* REPLACE: latte-art.png with your latte art photo for background */
-    background-color: #1a1a1a; /* Fallback */
-    color: white;
-    position: relative;
-}
-
-.hours-content {
-    display: flex;
-    justify-content: left;
-    align-items: left;
-}
-
-.hours-text {
-    max-width: 800px;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 60px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-}
-
-.hours-text h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-.hours-time {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: #d4543b;
-}
-
-.location-info {
-    margin-bottom: 30px;
-    line-height: 2;
-}
-
-.location-info p {
-    margin-bottom: 10px;
-}
-
-.map-placeholder {
-    margin-top: 30px;
-}
-
-.map-placeholder img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 10px;
-    /* REPLACE: Add your map screenshot as map-placeholder.png */
-}
-
-.hours-image {
-    display: none; /* Hidden since latte art is now the background */
-}
-
-.hours-image img {
-    display: none;
-}
-
-/* About Section */
+/* --- ABOUT SECTION --- */
 .about {
-    padding: 100px 0;
-    background-color: #f5f5f5;
+    padding: 140px 0;
+    background-color: #121110;
 }
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
     align-items: center;
 }
 
 .about-text h2 {
-    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
     margin-bottom: 30px;
-    font-weight: 700;
     line-height: 1.3;
-    color: #1a1a1a;
+    color: #ffffff;
 }
 
 .about-text p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    line-height: 1.8;
-    color: #555;
+    font-size: 16px;
+    color: #ded8cd;
+    margin-bottom: 24px;
 }
 
 .about-image img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    /* REPLACE: Add barista or café photo as barista.png */
+    border-radius: 12px;
+    filter: contrast(105%);
 }
 
-/* Menu Section */
+/* --- MENU SECTION --- */
 .menu {
-    padding: 100px 0;
-    background-color: #fff;
+    padding: 140px 0;
+    background-color: #474444;
     text-align: center;
 }
 
 .menu h2 {
+    font-family: 'Playfair Display', serif;
     font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    letter-spacing: 3px;
-}
-
-.menu-status {
-    font-size: 24px;
-    font-weight: 400;
-    color: #666;
     margin-bottom: 50px;
+    color: #ffffff;
 }
 
-.menu-placeholder {
-    max-width: 800px;
+.menu-spotlight-card {
+    display: block;
+    max-width: 850px;
     margin: 0 auto;
-    padding: 60px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    font-size: 20px;
-    color: #999;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: transform 0.4s ease;
 }
 
-/* Products Section */
+.menu-spotlight-card:hover {
+    transform: scale(1.02);
+}
+
+.menu-spotlight-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- PRODUCTS SECTION --- */
 .products {
-    padding: 100px 0;
-    background-color: #fef5f1;
+    padding: 140px 0;
+    background-color: #181615
 }
 
 .products h2 {
     text-align: center;
+    font-family: 'Playfair Display', serif;
     font-size: 42px;
-    font-weight: 700;
     margin-bottom: 60px;
-    letter-spacing: 2px;
+    color: #ffffff;
 }
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
 }
-
-/* Disabled Product Cards under Maintenance */
-.product-card.maintenance {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.product-card.maintenance img {
-    pointer-events: none;
-}
-
-.product-card .badge {
-    display: block;
-    font-size: 0.8rem;
-    color: #ff4d4d;
-    font-weight: 600;
-    margin-top: 5px;
-}S
 
 .product-card {
-    background: white;
-    border-radius: 10px;
+    background: #1c1917;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    border-color: rgba(224, 147, 117, 0.5);
 }
 
 .product-card img {
     width: 100%;
-    height: 300px;
+    height: 280px;
     object-fit: cover;
-    /* REPLACE: Add product images as coffee-beans.png, brewing-equipment.png, coffee-machines.png */
 }
 
 .product-card h3 {
-    padding: 25px;
-    font-size: 22px;
-    font-weight: 600;
+    padding: 24px;
+    font-size: 18px;
     text-align: center;
-    color: #333;
+    font-weight: 500;
+    color: #ffffff;
 }
 
-/* Events Section */
+.product-card .badge {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #e09375;
+    margin-top: 6px;
+    text-transform: uppercase;
+}
+
+/* --- EVENTS SECTION --- */
 .events {
-    padding: 100px 0;
-    background-color: #fff;
+    padding: 140px 0;
+    background-color: #181615;
     text-align: center;
 }
 
 .events h2 {
+    font-family: 'Playfair Display', serif;
     font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 50px;
-    letter-spacing: 2px;
-    font-style: italic;
+    margin-bottom: 60px;
+    color: #ffffff;
 }
 
-.calendar-placeholder {
-    max-width: 800px;
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 100px 60px;
-    background-color: #f9d84a;
-    border-radius: 10px;
-    font-size: 24px;
-    font-weight: 600;
-    color: #333;
 }
 
-/* Footer */
-.footer {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 60px 0 30px;
-    position: relative;
+.event-card {
+    background: #211e1c;
+    border-radius: 12px;
     overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: left;
+    transition: transform 0.4s ease;
 }
 
-.footer::before {
+.event-card:hover {
+    transform: translateY(-6px);
+}
+
+.event-poster-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.event-card-body {
+    padding: 25px;
+}
+
+.event-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.event-date {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #e09375;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* --- OPENING HOURS SECTION (FULL BACKGROUND PHOTO) --- */
+.opening-hours {
+    padding: 140px 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Dark gradient overlay to ensure text readability over the sanctuary photo */
+.opening-hours::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    /* Decorative wave pattern */
-    background: linear-gradient(to bottom, transparent, #1a1a1a);
+    inset: 0;
+    background: rgba(18, 17, 16, 0.88);
+    z-index: 1;
+}
+
+.opening-hours .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hours-text {
+    max-width: 750px;
+    width: 100%;
+    background: #211e1c;
+    padding: 60px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.hours-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.hours-time {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #e09375;
+}
+
+.location-info {
+    margin-bottom: 0;
+    color: #ded8cd;
+    line-height: 2.2;
+}
+
+.location-info strong {
+    color: #ffffff;
+}
+
+/* Cleaned up unused elements */
+.hours-image {
+    display: none;
+}
+
+.map-placeholder { 
+    display: none; 
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #0d0c0b;
+    padding: 100px 0 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     align-items: center;
-    position: relative;
-    z-index: 1;
 }
 
 .footer-logo img {
-    width: 300px;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-    /* REPLACE: Add colorful Toyo logo as toyo-logo-footer.png */
+    width: 240px;
+    margin-bottom: 20px;
 }
 
 .footer-logo p {
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 1px;
+    color: #b0a89e;
+    font-size: 14px;
 }
 
 .footer-social h3 {
-    font-size: 24px;
+    font-size: 18px;
     margin-bottom: 20px;
+    font-weight: 600;
+    color: #ffffff;
 }
 
 .social-icons {
     display: flex;
-    gap: 20px;
-}
-
-.social-icons a {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.social-icons a:hover {
-    transform: scale(1.1);
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .social-icons img {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    /* REPLACE: Add social media icons as instagram-icon.png, facebook-icon.png */
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    filter: invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons img:hover {
+    opacity: 1;
+}
+
+.contact-email p {
+    color: #ded8cd;
+}
+
+.contact-email a {
+    color: #e09375;
+    text-decoration: underline;
 }
 
 .footer-bottom {
     text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 30px;
-    border-top: 1px solid #333;
-    font-size: 14px;
-    color: #999;
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 1px;
 }
 
-/* Responsive Design */
+
+/* --- DISABLED / MAINTENANCE PRODUCT CARDS --- */
+.product-card.maintenance {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.product-card.maintenance img {
+    filter: grayscale(80%);
+}
+
+.product-card .disabled-link {
+    pointer-events: none;
+    cursor: default;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Overrides */
 @media (max-width: 968px) {
-    .hours-content,
-    .about-content,
-    .footer-content {
+    .about-content, .footer-content, .opening-hours .container {
         grid-template-columns: 1fr;
     }
-
     .nav-links {
-        gap: 20px;
-        font-size: 12px;
-    }
-
-    .hero-logo {
-        width: 300px;
-    }
-
-    .hours-text h2,
-    .about-text h2,
-    .products h2,
-    .events h2 {
-        font-size: 32px;
-    }
-
-    .menu h2 {
-        font-size: 36px;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 600px) {
-    .navbar {
-        padding: 10px 0;
-    }
-
-    .nav-container {
-        padding: 0 12px;
-        overflow-x: auto;
-        scrollbar-width: none;
-    }
-
-    .nav-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .nav-links {
-        width: max-content;
-        min-width: 100%;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        gap: 18px;
-        font-size: 11px;
-    }
-
-    .nav-links a {
-        white-space: nowrap;
-    }
-
-    .hero-logo {
-        width: 250px;
-    }
-
-    .hero-subtitle {
-        font-size: 16px;
-    }
-
-    .cta-button {
-        padding: 12px 30px;
-        font-size: 14px;
-    }
-
-    .hours-text h2,
-    .about-text h2 {
-        font-size: 28px;
-    }
-
-    .hours-text {
-        padding: 32px 22px;
-    }
-
-    .hours-time {
-        font-size: 24px;
-    }
-
-    .about-text p {
-        font-size: 16px;
-    }
-
-    .menu h2 {
-        font-size: 32px;
-    }
-
-    .menu-status {
-        font-size: 18px;
-    }
-
-    .products h2,
-    .events h2 {
-        font-size: 28px;
-    }
-
-    .calendar-placeholder {
-        padding: 60px 30px;
-        font-size: 18px;
-    }
-
-    .footer-logo img {
-        width: 200px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    section.reveal,
-    section.reveal.is-visible,
-    .hero-slide {
-        transition: none;
+        gap: 15px;
+        font-size: 10px;
     }
 }

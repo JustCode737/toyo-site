@@ -3,32 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="OKMQ8IuouBroepUqsCu03RZlNhqWM_xByCLOEtPhwrQ" />
     <title>Toyo Specialty Coffee + Matcha</title>
-    <!-- Favicon Links for Browsers and Search Bots -->
-    <link rel="icon" type="image/jpeg" sizes="32x32" href="images/icon_image.jpg">
-    <link rel="shortcut icon" href="images/icon_image.jpg">
+    <link rel="icon" href="images/icon_image.jpg" type="image/jpg">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Navigation -->
+<body class="editorial-theme">
+
+<!-- Custom Loading Screen with True Black Background -->
+    <div id="site-loader">
+        <img src="/images/cat-logo.png" alt="Cat Loading Logo" class="spinning-loader-logo">
+    </div>
+
+    <!-- Floating Minimalist Navigation -->
     <nav class="navbar">
         <div class="nav-container">
+            <div class="nav-brand-tag">TOYO CAFE.</div>
             <div class="nav-links">
-                <a href="#home">HOME</a>
-                <a href="#opening-hours">OPENING HOURS</a>
+                <a href="#home"> HOME</a>
+                <a href="#opening-hours">HOURS</a>
                 <a href="#menu">MENU</a>
-                <a href="#products">PRODUCTS</a>
+                <a href="#products">GOODS</a>
                 <a href="#events">EVENTS</a>
                 <a href="#contact">CONTACT</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Cinematic Immersive Hero -->
     <section id="home" class="hero">
         <div class="hero-slide" style="background-image:url('images/hero-bg1.png')"></div>
         <div class="hero-slide" style="background-image:url('images/hero-bg2.jpg')"></div>
@@ -37,36 +41,37 @@
         <div class="hero-slide" style="background-image:url('images/hero-bg5.jpg')"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
+            <div class="hero-badge-capsule">Specialty Coffee & Ceremonial Matcha</div>
             <img src="images/toyo-logo.png" alt="Toyo Logo" class="hero-logo">
-            <a href="#menu" class="cta-button">See our menu</a>
+            <div class="hero-action-group">
+                <a href="#menu" class="cta-button">Explore The Menu</a>
+            </div>
         </div>
     </section>
 
-    <!-- Opening Hours Section -->
-    <section id="opening-hours" class="opening-hours">
-        <div class="container">
-            <div class="hours-content">
-                <div class="hours-text">
-                    <h2>OPENING HOURS</h2>
-                    <p class="hours-time">3PM-12AM</p>
-                    <div class="location-info">
-                        <p><strong>Exact Location:</strong> KM 32, National Rd, Canlalay, Biñan City</p>
-                        <p><strong>Nearby:</strong> Liwanag Cafe, McDonald's, Q18 Hotel, Landayan St.</p>
-                        <p><strong>Waze/Google Maps:</strong> Search "Toyo Specialty Coffee + Matcha"</p>
-                    </div>
-                    <div class="map-placeholder">
-                        <img src="images/map-placeholder.jpg" alt="Location Map">
-                    </div>
+<!-- Opening Hours Section -->
+    <section id="opening-hours" class="opening-hours" style="background-image: url('images/latte-art.png');">
+        <div class="container" style="display: flex; justify-content: flex-start;">
+            <div class="hours-text">
+                <span class="sub-heading">Find Our Sanctuary</span>
+                <h2>OPENING HOURS</h2>
+                <p class="hours-time">3PM - 12AM</p>
+                <div class="location-info">
+                    <p><strong>Exact Location:</strong> KM 32, National Rd, Canlalay, Biñan City</p>
+                    <p><strong>Nearby Landmarks:</strong> Liwanag Cafe, McDonald's, Q18 Hotel, Landayan St.</p>
+                    <p><strong>Navigation:</strong> Search "Toyo Specialty Coffee + Matcha" on Waze or Google Maps</p>
+                    <img src="/images/map-placeholder.jpg" alt="Google Maps Location" style="width: 100%; height: auto; display: block;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Editorial Split About Section -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
+                    <span class="sub-heading">The Philosophy</span>
                     <h2>Your coffee experts are here to save the day</h2>
                     <p>Like many coffee lovers, we noticed a few things missing in our local café scene—affordable prices, more choices to enjoy, and a space where you could truly sit back and relax.</p>
                     <p>A café where good coffee is for everyone, conversations flow easily, and comfy couches are always waiting. That's how Toyo Specialty Coffee + Matcha was born—welcoming people from all walks of life, one cup at a time.</p>
@@ -78,19 +83,23 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
+    <!-- Gallery-Style Menu Section -->
     <section id="menu" class="menu">
         <div class="container">
+            <span class="sub-heading">Handcrafted Daily</span>
             <h2>MAIN MENU</h2>
             <div class="products-grid">
-                <a href="https://www.instagram.com/stories/highlights/17887405728464986" target="_blank" rel="noopener noreferrer"><img src="images/MENU IMAGE.PNG" alt="View the Toyo menu on Instagram"></a>
+                <a href="https://www.instagram.com/stories/highlights/17887405728464986" target="_blank" rel="noopener noreferrer" class="menu-spotlight-card">
+                    <img src="images/MENU IMAGE.PNG" alt="View the Toyo menu on Instagram">
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
+    <!-- Curated Grid Products Section -->
     <section id="products" class="products">
         <div class="container">
+            <span class="sub-heading">Equipment & Retail</span>
             <h2>Our Products</h2>
             <div class="products-grid">
                <div class="product-card maintenance">
@@ -101,12 +110,10 @@
                     <a href="/pages/option-equipment.html"><img src="images/origami.banner.png" alt="Brewing equipment"></a>
                     <h3>Origami Products</h3>
                 </div>
-                <!-- Coffee Machines Under Maintenance -->
                 <div class="product-card maintenance">
                     <span class="disabled-link"><img src="images/coffee-machines.png" alt="Coffee machines"></span>
                     <h3>Coffee Machines <span class="badge">(Under Maintenance)</span></h3>
                 </div>
-                <!-- Matcha Under Maintenance -->
                 <div class="product-card maintenance">
                     <span class="disabled-link"><img src="images/matcha.jpg" alt="Matcha products"></span>
                     <h3>Matcha <span class="badge">(Under Maintenance)</span></h3>
@@ -115,51 +122,55 @@
         </div>
     </section>
 
-    <!-- Events Section -->
+    <!-- Magazine-Layout Events Section -->
     <section id="events" class="events">
         <div class="container">
+            <span class="sub-heading">Gatherings & Sessions</span>
             <h2>UPCOMING EVENTS</h2>
             <div class="events-grid">
-                <!-- Event Poster Placeholder 1 -->
                 <div class="event-card">
                     <a href="https://www.instagram.com/toyospecialtycoffeeandmatcha/p/DZuL_RNtHjS/" target="_blank" rel="noopener noreferrer">
-                        <img src="images/origamiCup.jpeg" alt="Origami Cup Event Poster" style="max-width: 250px; width: 100%; height: auto;">
+                        <img src="images/origamiCup.jpeg" alt="Origami Cup Event Poster" class="event-poster-img">
                     </a>
-                    <h3>Origami Cup Philippines</h3>
-                    <p>Date & Time: SEPT 6, 2026</p>
+                    <div class="event-card-body">
+                        <h3>Origami Cup Philippines</h3>
+                        <p class="event-date">SEPTEMBER 6, 2026</p>
+                    </div>
                 </div>
                 
-                <!-- Event Poster Placeholder 2 -->
                 <div class="event-card">
                     <a href="https://www.instagram.com/toyospecialtycoffeeandmatcha/p/DaqFYH_nV1C/" target="_blank" rel="noopener noreferrer">
-                        <img src="images/Coffeematcha.jpeg" alt="Coffee & Matcha Fest Event Poster" style="max-width: 250px; width: 100%; height: auto;">
+                        <img src="images/Coffeematcha.jpeg" alt="Coffee & Matcha Fest Event Poster" class="event-poster-img">
                     </a>
-                    <h3>Coffee & Matcha Fest</h3>
-                    <p>Date & Time: SEPT 5-6, 2026</p>
+                    <div class="event-card-body">
+                        <h3>Coffee & Matcha Fest</h3>
+                        <p class="event-date">SEPTEMBER 5-6, 2026</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer/Contact Section -->
+    <!-- Atmospheric Dark Footer -->
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <img src="images/toyo-logo.png" alt="Toyo Logo">
+                    <p>Crafting community and culture through exceptional cups.</p>
                 </div>
                 <div class="footer-social">
-                <h3>Follow Us & Contact</h3>
+                    <h3>Follow Us & Contact</h3>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/toyospecialtycoffeeandmatcha/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <img src="https://www.transparentpng.com/thumb/logo-instagram/YfpFOL-logo-instagram-free-transparent.png" alt="logo instagram free transparent">
+                            <img src="https://www.transparentpng.com/thumb/logo-instagram/YfpFOL-logo-instagram-free-transparent.png" alt="Instagram logo">
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=61574739190985" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                            <img src="https://www.transparentpng.com/thumb/facebook/facebook-logo-pictures-2.png" alt="facebook logo pictures">
+                            <img src="https://www.transparentpng.com/thumb/facebook/facebook-logo-pictures-2.png" alt="Facebook logo">
                         </a>
                     </div>
                     <div class="contact-email">
-                        <p style="color: #ffffff;">Email: <a href="mailto:toyocafeph@gmail.com" style="color: #ffffff; text-decoration: underline;">toyocafeph@gmail.com</a></p>
+                        <p>Direct Inquiry: <a href="mailto:toyocafeph@gmail.com">toyocafeph@gmail.com</a></p>
                     </div>
                 </div>
             </div>

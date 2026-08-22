@@ -1,4 +1,4 @@
-// Smooth scrolling for navigation links
+// --- SMOOTH SCROLLING FOR NAVIGATION LINKS ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -14,45 +14,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+window.addEventListener('load', function() {
+    const loader = document.getElementById('site-loader');
+    
+    // Keeps the loading screen visible for 2 seconds before fading out
+    setTimeout(function() {
+        loader.classList.add('fade-out');
+        setTimeout(function() {
+            loader.style.display = 'none';
+        }, 300); // Matches the 0.3s CSS transition
+    }, 2000); // 2000 milliseconds = 2 seconds
+});
 
 
-// ANIMATION TRANSISITON BETWEEN IMAGES IN THE FRONT PAGE
-const slides = document.querySelectorAll('.hero-slide');
-let current = 0;
+// --- HERO SLIDESHOW ANIMATION ---
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        slides[currentSlide].classList.add('active');
 
-if (slides.length > 0) {
-    slides[current].classList.add('active');
-
-    if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        setInterval(() => {
-            const next = (current + 1) % slides.length;
-            slides[next].classList.add('active');
-            slides[current].classList.remove('active');
-            current = next;
-        }, 5000);
-    }
-}
-
-
-
-
-
-
-// Navbar background change on scroll
-const navbar = document.querySelector('.navbar');
-if (navbar) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(212, 84, 59, 0.98)';
-            navbar.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.25)';
-        } else {
-            navbar.style.background = 'rgba(212, 84, 59, 0.95)';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+        if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 5000); 
         }
-    });
-}
+    }
+});
 
-// Add fade-in animation on scroll for sections
+// --- ADD FADE-IN ANIMATION ON SCROLL FOR SECTIONS ---
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -74,7 +66,7 @@ if ('IntersectionObserver' in window) {
     });
 }
 
-// Product cards hover effect enhancement
+// --- PRODUCT CARDS HOVER EFFECT ENHANCEMENT ---
 const productCards = document.querySelectorAll('.product-card');
 productCards.forEach(card => {
     card.addEventListener('mouseenter', function() {
@@ -85,5 +77,5 @@ productCards.forEach(card => {
     });
 });
 
-// Log page load
+// --- LOG PAGE LOAD ---
 console.log('Toyo Specialty Coffee + Matcha website loaded successfully!');
