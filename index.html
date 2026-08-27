@@ -85,7 +85,7 @@
 
 
 
-    <!-- Gallery-Style Menu Section -->
+  <!-- Gallery-Style Menu Section -->
 <section id="menu" class="menu">
     <div class="container">
         <span class="sub-heading">Handcrafted Daily</span>
@@ -101,22 +101,30 @@
         <div class="menu-content-wrapper">
             <!-- Page 1 (Active by default) -->
             <div id="menu-page-1" class="menu-page-pane active">
-                <a href="https://www.instagram.com/stories/highlights/17887405728464986" target="_blank" rel="noopener noreferrer" class="menu-spotlight-card">
+                <div class="menu-spotlight-card" onclick="openMenuModal('/images/menu1.png', 'Toyo Menu Page 1')">
                     <img src="/images/menu1.png" alt="Toyo Menu Page 1">
-                </a>
+                    <span class="zoom-hint">🔍 Click to Enlarge</span>
+                </div>
             </div>
 
             <!-- Page 2 -->
             <div id="menu-page-2" class="menu-page-pane">
-                <a href="https://www.instagram.com/stories/highlights/17887405728464986" target="_blank" rel="noopener noreferrer" class="menu-spotlight-card">
+                <div class="menu-spotlight-card" onclick="openMenuModal('/images/menu2.png', 'Toyo Menu Page 2')">
                     <img src="/images/menu2.png" alt="Toyo Menu Page 2">
-                </a>
+                    <span class="zoom-hint">🔍 Click to Enlarge</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-
+<!-- Menu Image Lightbox Modal Viewer -->
+<div id="menuModal" class="menu-modal" onclick="closeMenuModal()">
+    <span class="menu-modal-close">&times;</span>
+    <div class="menu-modal-content" onclick="event.stopPropagation()">
+        <img id="modalImage" src="" alt="Enlarged Menu">
+    </div>
+</div>
 
 
     <!-- Curated Grid Products Section -->

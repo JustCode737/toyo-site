@@ -58,6 +58,48 @@ function switchMenuPage(evt, pageId) {
     evt.currentTarget.classList.add('active');
 }
 
+
+// --- MENU IMAGE LIGHTBOX VIEWER ---
+function openMenuModal(imageSrc, imageAlt) {
+    const modal = document.getElementById('menuModal');
+    const modalImg = document.getElementById('modalImage');
+    
+    modal.style.display = 'flex';
+    modalImg.src = imageSrc;
+    modalImg.alt = imageAlt;
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeMenuModal() {
+    const modal = document.getElementById('menuModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore background scrolling
+}
+
+// Optional: Close modal with the Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeMenuModal();
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // --- ADD FADE-IN ANIMATION ON SCROLL FOR SECTIONS ---
 const observerOptions = {
     threshold: 0.1,
