@@ -42,6 +42,66 @@ section {
 
 
 
+
+/* Menu Tabs Styling */
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.menu-tab-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.6rem 1.5rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+}
+
+.menu-tab-btn:hover,
+.menu-tab-btn.active {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* Menu Panes Toggle State */
+.menu-page-pane {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.menu-page-pane.active {
+    display: block;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --- LOADING SCREEN ANIMATION --- */
 #site-loader {
     position: fixed;

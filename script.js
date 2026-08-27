@@ -26,7 +26,6 @@ window.addEventListener('load', function() {
     }, 2000); // 2000 milliseconds = 2 seconds
 });
 
-
 // --- HERO SLIDESHOW ANIMATION ---
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.hero-slide');
@@ -43,6 +42,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+// --- MENU PAGE SWITCHER FUNCTION ---
+function switchMenuPage(evt, pageId) {
+    // Hide all menu panes
+    const panes = document.querySelectorAll('.menu-page-pane');
+    panes.forEach(pane => pane.classList.remove('active'));
+
+    // Remove active class from all tab buttons
+    const buttons = document.querySelectorAll('.menu-tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Show the target menu pane and mark button as active
+    document.getElementById(pageId).classList.add('active');
+    evt.currentTarget.classList.add('active');
+}
 
 // --- ADD FADE-IN ANIMATION ON SCROLL FOR SECTIONS ---
 const observerOptions = {

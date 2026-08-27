@@ -83,18 +83,41 @@
         </div>
     </section>
 
+
+
     <!-- Gallery-Style Menu Section -->
-    <section id="menu" class="menu">
-        <div class="container">
-            <span class="sub-heading">Handcrafted Daily</span>
-            <h2>MAIN MENU</h2>
-            <div class="products-grid">
+<section id="menu" class="menu">
+    <div class="container">
+        <span class="sub-heading">Handcrafted Daily</span>
+        <h2>MAIN MENU</h2>
+        
+        <!-- Menu Page Switcher Tabs -->
+        <div class="menu-tabs">
+            <button class="menu-tab-btn active" onclick="switchMenuPage(event, 'menu-page-1')">Menu Page 1</button>
+            <button class="menu-tab-btn" onclick="switchMenuPage(event, 'menu-page-2')">Menu Page 2</button>
+        </div>
+
+        <!-- Menu Image Containers -->
+        <div class="menu-content-wrapper">
+            <!-- Page 1 (Active by default) -->
+            <div id="menu-page-1" class="menu-page-pane active">
                 <a href="https://www.instagram.com/stories/highlights/17887405728464986" target="_blank" rel="noopener noreferrer" class="menu-spotlight-card">
-                    <img src="images/MENU IMAGE.PNG" alt="View the Toyo menu on Instagram">
+                    <img src="/images/menu1.png" alt="Toyo Menu Page 1">
+                </a>
+            </div>
+
+            <!-- Page 2 -->
+            <div id="menu-page-2" class="menu-page-pane">
+                <a href="https://www.instagram.com/stories/highlights/17887405728464986" target="_blank" rel="noopener noreferrer" class="menu-spotlight-card">
+                    <img src="/images/menu2.png" alt="Toyo Menu Page 2">
                 </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
 
     <!-- Curated Grid Products Section -->
     <section id="products" class="products">
@@ -115,7 +138,7 @@
                     <h3>Coffee Machines <span class="badge">(Under Maintenance)</span></h3>
                 </div>
                 <div class="product-card maintenance">
-                    <span class="disabled-link"><img src="/images/matcha.jpg" alt="Matcha products"></span>
+                    <span class="disabled-link"><img src="images/matcha.jpg" alt="Matcha products"></span>
                     <h3>Matcha <span class="badge">(Under Maintenance)</span></h3>
                 </div>
             </div>
